@@ -69,3 +69,4 @@ def text_to_textnodes(text):
     linked_nodes = split_nodes_link(coded_nodes)
     return split_nodes_image(linked_nodes)
     
+##Tests are in test_textnode.py
