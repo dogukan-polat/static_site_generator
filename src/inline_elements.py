@@ -12,6 +12,8 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
             raise Exception("Markdown symbol not closed!")
         if len(node_list) > 1:
             for i in range(0, len(node_list)):
+                if node_list[i] == "":
+                    continue
                 if i % 2 == 0:
                     new_nodes.append(TextNode(node_list[i], TextType.TEXT))
                 else:

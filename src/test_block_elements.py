@@ -1,5 +1,6 @@
 import unittest
 from block_elements import *
+from generate_page import extract_title
 
 class TestBlockElements(unittest.TestCase):
 
@@ -68,3 +69,7 @@ class TestBlockElements(unittest.TestCase):
             html,
             "<div><pre><code>This is text that _should_ remain\nthe **same** even with inline stuff\n</code></pre></div>",
         )
+    
+    def test_extract_title(self):
+        md = "# Hello"
+        self.assertEqual(extract_title(md), "Hello")
